@@ -189,24 +189,36 @@
         </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/idRecyclerWeather"
+            android:layout_above="@id/idRecyclerWeathersecond"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="13dp"
             android:text="Future Weather Forecast"
             android:textColor="@color/white"
             android:textStyle="bold" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/idRecyclerWeather"
+            android:id="@+id/idRecyclerWeathersecond"
             android:layout_alignParentBottom="true"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             />
+
+        <Button
+            android:id="@+id/futureForecastBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="31dp"
+            android:layout_above="@+id/idRecyclerWeathersecond"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="7dp"
+            android:text="View More"
+            android:textSize="10sp" />
     </RelativeLayout>
 
 </RelativeLayout>

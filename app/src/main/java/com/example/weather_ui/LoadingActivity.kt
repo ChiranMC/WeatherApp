@@ -8,6 +8,7 @@ import android.os.Looper
 
 class LoadingActivity : AppCompatActivity() {
 
+
     // delay before the redirect
     private val delayMillis: Long = 3000
 

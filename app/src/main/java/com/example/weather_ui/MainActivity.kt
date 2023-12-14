@@ -1,8 +1,10 @@
 package com.example.weather_ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +24,7 @@ import java.util.Locale
 class MainActivity : AppCompatActivity() {
 
     lateinit var image: ImageView
+    lateinit var nextPG : Button
     lateinit var inputCity: TextView
     private lateinit var weatherAdapter: WeatherAdapter
     private val weatherList = ArrayList<Weather>()
@@ -29,9 +32,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        nextPG = findViewById(R.id.futureForecastBTN)
+
 
         image = findViewById(R.id.idIcon)
         inputCity = findViewById(R.id.idEditCity)
+
+        nextPG.setOnClickListener(){
+            val intent = Intent(this@MainActivity, Forecast::class.java)
+
+            val inpuCity = inputCity.text.toString()
+            // Put the variable value as an extra with a key ("EXTRA_KEY")
+            intent.putExtra("EXTRA_KEY", inpuCity)
+            startActivity(intent)
+        }
 
         // Add click listener for the search ImageView
         findViewById<ImageView>(R.id.idSearch).setOnClickListener {
@@ -53,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             // Initialize RecyclerView and set adapter
-            val recyclerView: RecyclerView = findViewById(R.id.idRecyclerWeather)
+            val recyclerView: RecyclerView = findViewById(R.id.idRecyclerWeathersecond)
             weatherAdapter = WeatherAdapter(weatherList)
             recyclerView.adapter = weatherAdapter
         }
@@ -83,7 +97,7 @@ class MainActivity : AppCompatActivity() {
             for (i in 0 until jsonArray.length()) {
                 val item = jsonArray.getJSONObject(i)
                 val dayFilter = item.getString("dt_txt")
-                //if(filterForToday(dayFilter)){
+                if(filterForToday(dayFilter)){
                     val dtTxt = item.getString("dt_txt")
                     val temp = item.getJSONObject("main").getString("temp")
                     val icon = item.getJSONArray("weather").getJSONObject(0).getString("icon")
@@ -94,7 +108,7 @@ class MainActivity : AppCompatActivity() {
 
                     // Add Weather object to the list
                     weatherList.add(Weather(dtTxt, temp, iconId, main))
-                //}
+                }
             }
         } catch (e: JSONException) {
             e.printStackTrace()
