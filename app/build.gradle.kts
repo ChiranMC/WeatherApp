@@ -50,4 +50,5 @@ dependencies {
     implementation ("com.google.android.gms:play-services-location:21.0.1")
     implementation("com.github.f0ris.sweetalert:library:1.6.2")
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
+    implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.17")
 }

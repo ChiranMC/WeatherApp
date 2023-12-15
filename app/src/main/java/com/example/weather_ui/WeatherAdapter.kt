@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
+import com.squareup.picasso.Picasso
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -46,7 +47,11 @@ class WeatherAdapter(private val weatherList : ArrayList<Weather>) :
         val currentItem = weatherList[position]
         //val onlyTime = currentItem.time
         //if (filterForToday(onlyTime)){
-            holder.titleImage.setImageResource(currentItem.iconId)
+            val imageURLs = "https://openweathermap.org/img/w/" + currentItem.iconId + ".png"
+
+            Picasso.get().load(imageURLs).into(holder.titleImage)
+
+            //holder.titleImage.text = currentItem.iconId
             holder.tvTime.text = currentItem.time
             holder.tvWindSpeed.text = currentItem.main
             holder.tvTemperature.text = currentItem.temp

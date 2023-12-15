@@ -62,7 +62,8 @@ class Forecast : AppCompatActivity() {
 
                 // Check if the date is not today
                 if (!filterForToday(dtTxt, todayDate)) {
-                    val temp = item.getJSONObject("main").getString("temp")
+
+                    val temp = String.format("%.2f",item.getJSONObject("main").getDouble("temp") - 273.15)
                     val icon = item.getJSONArray("weather").getJSONObject(0).getString("icon")
                     val main = item.getJSONArray("weather").getJSONObject(0).getString("main")
 
@@ -70,7 +71,7 @@ class Forecast : AppCompatActivity() {
                     val iconId = getIconResourceId(icon)
 
                     // Add Weather object to the list
-                    weatherList.add(Weather(dtTxt, temp, iconId, main))
+                    weatherList.add(Weather(dtTxt, temp, icon, main))
                 }
             }
         } catch (e: JSONException) {
