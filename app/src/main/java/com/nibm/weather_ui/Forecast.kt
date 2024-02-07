@@ -1,4 +1,4 @@
-package com.example.weather_ui
+package com.nibm.weather_ui
 
 import android.os.Bundle
 import android.util.Log

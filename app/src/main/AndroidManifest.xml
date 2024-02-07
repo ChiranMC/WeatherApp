@@ -17,13 +17,13 @@
         android:theme="@style/Theme.Weather_UI"
         tools:targetApi="31">
         <activity
-            android:name=".Forecast"
+            android:name="com.nibm.weather_ui.Forecast"
             android:exported="false" />
         <activity
             android:name=".FutureForecast"
             android:exported="false" />
         <activity
-            android:name=".LoadingActivity"
+            android:name="com.nibm.weather_ui.LoadingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.nibm.weather_ui.MainActivity"
             android:exported="true" />
     </application>
 

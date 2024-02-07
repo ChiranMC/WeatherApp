@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.weather_ui"
+    namespace = "com.nibm.weather_ui"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.weather_ui"
+        applicationId = "com.nibm.weather_ui"
         minSdk = 24
         targetSdk = 33
         versionCode = 1

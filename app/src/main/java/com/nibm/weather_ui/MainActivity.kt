@@ -1,4 +1,4 @@
-package com.example.weather_ui
+package com.nibm.weather_ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun fetchRecyclerData(city: String, listener: (String?) -> Unit) {
-        val url = "https://api.openweathermap.org/data/2.5/forecast?q=$city&appid=13743e65600c3dd86e8905a8b8f82bc0"
+        val url = "https://api.openweathermap.org/data/2.5/forecast?q=$city&appid=feeec0a5f0f5d17a621d4e8d4d19688a"
 
         val request = JsonObjectRequest(Request.Method.GET, url, null,
             { data ->

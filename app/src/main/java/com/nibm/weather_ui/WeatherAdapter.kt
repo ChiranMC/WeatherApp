@@ -1,4 +1,4 @@
-package com.example.weather_ui
+package com.nibm.weather_ui
 
 import android.view.LayoutInflater
 import android.view.View
@@ -19,7 +19,8 @@ class WeatherAdapter(private val weatherList : ArrayList<Weather>) :
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.weather_rv_item,
+        val itemView = LayoutInflater.from(parent.context).inflate(
+            R.layout.weather_rv_item,
             parent, false )
         return MyViewHolder(itemView)
 

@@ -1,4 +1,4 @@
-package com.example.weather_ui
+package com.nibm.weather_ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
